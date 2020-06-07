@@ -108,7 +108,7 @@ const mapStateToProps = ({ auth: { loading, error } }) => ({ loading, error })
 const mapDispatchToProps = (dispatch, { sendsayService }) => {
 	return {
 		onAuthLogin: onAuthLogin(sendsayService, dispatch),
-		...bindActionCreators(onAuthLoading, dispatch)
+		...bindActionCreators({ onAuthLoading }, dispatch)
 	}
 }
 
