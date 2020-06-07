@@ -1,11 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import App from './App'
 import { BrowserRouter } from 'react-router-dom'
-import { createStore, compose, applyMiddleware } from 'redux'
-import { Provider } from 'react-redux'
-import rootReducer from './store/reducers/rootReducer'
+import { createStore, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
+import { Provider } from 'react-redux'
+
+import rootReducer from './store/reducers/rootReducer'
+import Sendsay from 'sendsay-api'
+import App from './App'
+import { SendsayServiceProvider } from './components/SendsayContext'
 
 
 const store = createStore(
@@ -13,14 +16,17 @@ const store = createStore(
 	applyMiddleware(thunk)
 )
 
+const sendsayService = new Sendsay()
 
 const app = (
 	<Provider store={store}>
-		<BrowserRouter>
-			<React.StrictMode>
-				<App />
-			</React.StrictMode>
-		</BrowserRouter>
+		<SendsayServiceProvider value={sendsayService}>
+			<BrowserRouter>
+				<React.StrictMode>
+					<App />
+				</React.StrictMode>
+			</BrowserRouter>
+		</SendsayServiceProvider>
 	</Provider>
 )
 

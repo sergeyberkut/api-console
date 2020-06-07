@@ -1,14 +1,17 @@
 .btn {
 	font-size: 16px;
-	width: 110px;
+	width: 108px;
 	height: 40px;
 	border-radius: 5px;
 	background-image: linear-gradient(#3d9cfe, #075dfb);
 	color: #fff;
-	box-sizing: border-box;
+	box-sizing: content-box;
+	border: 2px solid;
+	border-color: white;
+	transition: .2s;
 
 	&:focus {
-		border: 2px solid lightblue;
+		border-color: lightblue;
 	}
 
 	&:hover {
@@ -17,7 +20,6 @@
 
 	&:active {
 		background-image: linear-gradient(#3687d9, #054fd5);
-		border: none;
 	}
 
 	&:disabled {

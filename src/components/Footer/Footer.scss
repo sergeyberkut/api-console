@@ -1,0 +1,55 @@
+.footer {
+	padding: 10px;
+}
+
+.footer__body {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.footer__submit-btn {
+	flex-basis: 33%;
+}
+
+.footer__github-link {
+	flex-basis: 33%;
+}
+
+.footer__format-btn-wrapper {
+	flex-basis: 33%;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.footer__format-btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #000;
+	cursor: pointer;
+	border-radius: 7px;
+	padding: 3px;
+	box-sizing: border-box;
+	width: 160px;
+
+	&-text {
+		margin-top: -5px;
+	}
+
+	& svg {
+		margin-right: 5px;
+	}
+
+	&:hover {
+		color: rgb(0, 85, 251);
+
+		& svg path {
+			stroke: rgb(0, 85, 251);
+		}
+	}
+
+	&:active {
+		border: 2px solid #45a5ff;
+	}
+}

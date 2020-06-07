@@ -5,7 +5,7 @@ const initialState = {
 	isAuthenticated: false,
 	loading: null,
 	error: null,
-	dataLoader: true
+	dataLoader: true,
 }
 
 export default function authReducer(state = initialState, { type, payload }) {
@@ -15,7 +15,7 @@ export default function authReducer(state = initialState, { type, payload }) {
 				...state,
 				isAuthenticated: true,
 				loading: false,
-				dataLoader: false
+				dataLoader: false,
 			}
 		case AUTH_LOGOUT:
 			return {
